@@ -9,6 +9,7 @@ function accessVault(key){
     }
 }
 
+
 console.log(accessVault("SECRET_123"));
 console.log(accessVault("random_key"));
 console.log(accessVault("idk"));
