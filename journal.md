@@ -11,3 +11,7 @@ the finally block runs no matter if the catch block runs or not. The catch block
 
 ### PROBLEMS OCCURED DURING THIS PHASE
 for some reason their is an extra error message and extra completed message at the beginning. I don't know why this is but because it is not causing problems for my current code i'm going to move on.
+
+
+### PHASE 4 PROBLEMS 
+the main problem I am dealing with in this phase is i'm not really sure what it is asking me to do. I attempted it based on the hints but I don't think i'm applying it right. Unlike the last phase I'm not gonna attempt the next phase because it is a validation and with me not knowing what this phase is supposed to be doing I am gonna stop here.
