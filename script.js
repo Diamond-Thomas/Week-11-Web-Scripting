@@ -8,16 +8,37 @@ function accessVault(key){
         return "Access Granted";
     }
     else if (key === undefined || Number.isNaN(key)){
-        throw new InvalidKeyError ("Key is missing or corrupted");
+        throw new InvalidKeyError("Key is missing or corrupted");
     }
     else if (key !== "SECRET_123"){
-        throw new VaultLockedError ("Incorrect key provided");
+        throw new VaultLockedError("Incorrect key provided");
     }
 }
 
-console.log(accessVault("SECRET_123"));
-console.log(accessVault(undefined));
-console.log(accessVault(NaN));
-console.log(accessVault("random_key"));
-console.log(accessVault("idk"));
+function attemptEntry(key){
+    try {
+        return accessVault(key);
+
+    }catch (error){
+        if (error instanceof VaultLockedError){
+            return "User Error: Please try again.";
+        }
+        else if (error instanceof InvalidKeyError) {
+            return "Security Alert: System corruption detected.";
+        }
+        else{
+            console.log(error);
+        }
+    } 
+    finally {
+            console.log("Vault attempt completed. \n");
+    }
+}  
+
+
+console.log(attemptEntry("SECRET_123"));
+console.log(attemptEntry(undefined));
+console.log(attemptEntry(NaN));
+console.log(attemptEntry("random_key"));
+console.log(attemptEntry("idk"));
 
